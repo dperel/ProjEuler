@@ -5,7 +5,7 @@
 #This is an object-oriented brute force solution that has a big O complexity of n^2
 
 class Palindromic 
-  attr_accessor :palindromes
+
 
   def incrementer(num)
     @@palindromes = {}

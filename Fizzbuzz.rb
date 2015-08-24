@@ -37,3 +37,7 @@ def fzbz(num)
   end
 
   fzbz(100)
+
+999.downto(1) do |i|
+    999.downto(1) do |j|
+        

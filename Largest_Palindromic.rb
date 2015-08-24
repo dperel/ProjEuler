@@ -20,7 +20,7 @@ class Palindromic
 
   def self.checker(num1, num2)
       numbers = (num1*num2).to_s.split("")
-      if numbers[0..numbers.length/2] == numbers[numbers.length/2..numbers.length].reverse 
+      if number.to_s = number.to_s.reverse
         @@palindromes[num1*num2] = [num1,num2]
         #stores palindromes in a hash. 
         #The palindrome is the key, the factors are the values 

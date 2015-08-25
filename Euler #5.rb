@@ -13,7 +13,7 @@ class SmallMultiple
     count = 0 
       @@divisor_array.each{|n| count+=1 if num % n == 0}
       num+=1 
-    end until count == 19
+    end until count == 20
     puts num-1 
     #subtract 1 to compensate for the incrementation of n after each round 
     end

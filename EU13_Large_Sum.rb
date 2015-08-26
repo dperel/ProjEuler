@@ -1,6 +1,6 @@
 #Find the first ten digits of the sum of the grid of large numbers
 
-#In this refactor, I shaved down the number of digits used from each array. 
+#In this refactor, I shaved down the number of digits used from each element in the given array. 
 
 class LargeSum
 

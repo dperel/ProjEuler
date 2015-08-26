@@ -1,10 +1,12 @@
 #Find the first ten digits of the sum of the grid of large numbers
 
+#In this refactor, I shaved down the number of digits used from each array. 
+
 class LargeSum
 
   def find_first_10_digits(arr)
     highest_places = []
-    arr.map{|num| highest_places << num}
+    arr.map{|num| highest_places << num.to_s[0..10].to_i}
     sum_number = highest_places.inject{|sum, x| sum + x}
     sum_string =sum_number.to_s
     p sum_string[0..9].to_i

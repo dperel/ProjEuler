@@ -3,6 +3,8 @@
 # c = Math.sqrt(a**2 + b**2)
 
 
+#8/26: This solution is incorrect - need to refactor
+
 class Pythagorean
 
   def find_a_and_b(c)

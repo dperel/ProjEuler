@@ -14,6 +14,7 @@
 
 class Spiral_Primes
 @@ratio = 1
+@@all_corners = []
 
 #make an array of the squares of all odd numbers, which are the bottom right corners of the grid. The length of the array is the start number you provided as a test value.  
   def list_of_squares(limit)
@@ -45,7 +46,6 @@ end
 
 #determine the corner values based on the primes at the lower right corners 
   def prime_corners(ans_array)
-   all_corners = []
    ans_array.map{|arr| 
       if arr[0] != 1
         corner_a = arr[-1]
@@ -53,17 +53,17 @@ end
         corner_b = corner_a - edge
         corner_c = corner_b - edge
         corner_d = corner_c - edge
-        all_corners << [corner_a, corner_b, corner_c, corner_d]
+        @@all_corners << [corner_a, corner_b, corner_c, corner_d]
       end
    }
-   ratio_finder(all_corners)
+   ratio_finder
    end
 
 #last step: calculate the edge length of the spiral that pushes the total ratio of primes to not primes in the corners to <(1:10)
-   def ratio_finder(all_corners) 
+   def ratio_finder 
     num_primes = 0
     num_others = 0
-    all_corners.each{|arr| 
+    @@all_corners.each{|arr| 
       arr.each{|corner| 
         if is_prime?(corner) 
           num_primes+=1
@@ -87,7 +87,8 @@ def run(start_number)
     puts @@ratio
     start_number+=1000
    end 
-   puts "The number " + start_number.to_s + "satisfies the ratio."
+   puts "The corner dimensions where the prime:non-prime ratio is <1:10 is "
+   puts @@all_corners[-1]
  end 
 
 end 
@@ -96,4 +97,4 @@ end
 #Warning, this may take a long time. 
 #The correct number is over 25,000, possibly far over 25,000. 
 spiral = Spiral_Primes.new
-spiral.run(25000)
+spiral.run(100)
